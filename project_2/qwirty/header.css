@@ -1,0 +1,101 @@
+header {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-nav {
+  display: flex;
+  flex-direction: row;
+  background: #4F7CAC;
+  justify-content: space-between;
+  font-family: 'Titillium Web', sans-serif;
+}
+
+.full-width {
+  display: none;
+}
+
+.short-width {
+  display: flex;
+}
+
+.horizontal.nav-list {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  font-weight: 300;
+}
+
+.horizontal.nav-list a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 8px;
+  border-right: 1px solid lightgray;
+}
+
+.sub-nav {
+  display: flex;
+  flex-direction: row;
+  background: #eee;
+  padding: 16px 0;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.search-form {
+  display: flex;
+  flex: 1;
+  border: none;
+}
+
+.search-form input {
+  flex: 1;
+  padding: 4px 8px;
+  border: none;
+  border-bottom: 1px solid #4F7CAC;
+}
+
+.company-name {
+  font-family: 'IM Fell Great Primer SC', serif;
+  font-size: 34px;
+  min-width: calc(256px - 2rem);
+  margin: 0 16px;
+  text-align: center;
+  color: #4F7CAC;
+}
+
+.sub-nav button {
+  background-color: #4F7CAC;
+  padding: 8px 5px;
+  color: white;
+  border: none;
+}
+
+.sub-nav input {}
+
+.credit-offer {
+  background-color: red;
+  padding: 4px 8px;
+  text-decoration: none;
+  color: white;
+  font-family: 'Titillium Web', sans-serif;
+  margin: 0 16px;
+  flex-shrink: 0;
+}
+
+.nav-list li:last-of-type a {}
+
+@media (min-width: 769px) {
+
+
+  .horizontal.nav-list.short-width {
+    display: none;
+  }
+}
+
+@media (max-width: 769px) {
+  .horizontal.nav-list.full-width {
+    display: none;
+  }
+}

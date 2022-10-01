@@ -1,0 +1,56 @@
+/* Site-wide */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+
+
+/* Header */
+
+header {
+  background-color: lightgray;
+  display: flex;
+  justify-content: space-between;
+
+
+  align-items: center
+   ;
+  padding: 10px;
+}
+
+nav {
+  display: flex;
+
+
+}
+
+/* Main */
+
+.main {
+  display: flex;
+}
+
+.hamburger {
+
+}
+
+/* Footer */
+
+/* Media Queries */
+
+@media (max-width: 768px) {
+
+  nav a {
+
+    display: none;
+    }
+
+}
