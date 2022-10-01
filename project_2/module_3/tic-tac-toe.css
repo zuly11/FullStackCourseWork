@@ -8,6 +8,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+
+  background-color: rgb(153, 236, 193);
 }
 
 .board {
@@ -28,16 +30,16 @@ body {
   font-size: 28px;
 }
 
-.cell:nth-child(3n+2) {
+.cell:nth-child(3n + 2) {
   border-bottom: none;
 }
 
-.cell:nth-child(3n+1) {
+.cell:nth-child(3n + 1) {
   border-bottom: none;
   border-left: none;
 }
 
-.cell:nth-child(3n+3) {
+.cell:nth-child(3n + 3) {
   border-bottom: none;
   border-right: none;
 }
