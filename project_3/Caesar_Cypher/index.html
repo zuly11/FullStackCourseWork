@@ -1,0 +1,29 @@
+<html>
+  <head> </head>
+
+  <body>
+    <h1>This is my Caesar Cypher javascript</h1>
+    <script>
+      function caesarCypher(input, shift) {
+        let output = "";
+        const alphabet = "abcdefghijklmnopqrstuvwxyz";
+        for (let i = 0; i < input.length; i++) {
+          const letter = input[i];
+          if (letter !== " ") {
+            let indexOfLetter = alphabet.indexOf(letter) + shift;
+            if (indexOfLetter >= alphabet.length) {
+              indexOfLetter = indexOfLetter - alphabet.length;
+            }
+            output = output + alphabet[indexOfLetter];
+          } else {
+            output = output + " ";
+          }
+        }
+        return output;
+      }
+      console.log(caesarCypher("a z", 2)); //c b
+      console.log(caesarCypher("az", 1)); //ba
+      console.log(caesarCypher("hello world", 13)); // => 'uryyb jbeyq'
+    </script>
+  </body>
+</html>

@@ -1,10 +1,16 @@
-let groceryStoreOpen = false;
-let cornerStoreOpen = false;
+function howEqual(val1, val2) {
+  let output = "";
+  if (val1 === val2) {
+    output = "strictly";
+  } else if (val1 == val2) {
+    output = "loosely";
+  }
 
-if (groceryStoreOpen) {
-  console.log("Go to grocery store");
-} else if (cornerStoreOpen) {
-  console.log("Go to corner store");
-} else {
-  console.log("Guess I'm ordering out tonight");
+  return output;
 }
+
+console.log(howEqual(0, "0")); // => loosely
+console.log(howEqual(3, 9 / 3)); // => strictly
+console.log(howEqual(true, "truthy")); // => not equal
+
+/*console.log(isTruthy("i yearn for ")); //*/
