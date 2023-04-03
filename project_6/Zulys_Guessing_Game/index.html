@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Guessing Game</title>
+    <link rel="stylesheet" href="main.css" />
+    <script defer src="js/guessing-game.js"></script>
+  </head>
+
+  <body>
+    <div id="container">
+      <!---The title of my page-->
+      <div>
+        <h1>Zuly's Guess My Number</h1>
+        <h2>(From 1 - 100)</h2>
+      </div>
+
+      <form id="inputForm">
+        <input id="numberInput" type="text" />
+        <button onclick="guessNumber()" id="submit">Submit</button>
+      </form>
+      <button onclick="clearthis() id="clear">Reset</button>
+      <button>Hint</button>
+
+      <!--Guess Row---------->
+
+      <div id="guessDisplay" class="row">
+        <div class="col guess-div pt-2"><h3 class="myguess"></h3></div>
+        <div class="col guess-div pt-2"><h3 class="myguess"></h3></div>
+        <div class="col guess-div pt-2"><h3 class="myguess"></h3></div>
+        <div class="col guess-div pt-2"><h3 class="myguess"></h3></div>
+        <div class="col guess-div pt-2"><h3 class="myguess"></h3></div>
+      </div>
+
+      <div class="hintMessage">
+        <h2></h2>
+      </div>
+    </div>
+  </body>
+</html>

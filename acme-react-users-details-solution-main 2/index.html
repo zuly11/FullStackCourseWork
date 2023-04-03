@@ -1,0 +1,83 @@
+<html>
+  <head>
+    <title>Acme User Details</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <style>
+      body {
+        font-family: verdana;
+      }
+      section {
+        display: flex;
+      }
+      section > * {
+        flex: 1;
+      }
+      .selected {
+        font-size: 1.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div id='app'></div>
+    <script type='text/babel'>
+      //https://www.acme-api.com/api/users/detail/9df32d38-1fd9-4e88-92d2-5870e2b736a0
+      const App = () => {
+        const [users, setUsers] = React.useState([]);
+        const [detail, setDetail] = React.useState({});
+
+        const loadUsers = async()=> {
+          const response = await fetch('https://www.acme-api.com/api/users');
+          const json = await response.json();
+          setUsers(json.users);
+        };
+
+        const loadUser = async()=> {
+          const id = window.location.hash.slice(1);
+          if(id){
+            const response = await fetch(`https://www.acme-api.com/api/users/detail/${id}`);
+            const json = await response.json();
+            setDetail(json);
+          }
+          else {
+            setDetail({});
+          }
+        }
+
+        React.useEffect(()=> {
+          loadUsers();
+          window.addEventListener('hashchange', loadUser);
+          loadUser();
+        }, [])
+        return (
+          <div>
+            <h1>Acme User Details</h1>
+            <section>
+              <ul>
+                {
+                  users.map( user => {
+                    return (
+                      <li key={ user.id } className={ detail.id === user.id ? 'selected': ''}>
+                        <a href={`#${detail.id === user.id ? '': user.id}`}>{ user.fullName }</a>
+                      </li>
+                    );
+                  })
+                }
+              </ul>
+              <p>
+                {
+                  detail.bio
+                }
+              </p>
+            </section>
+          </div>
+        );
+      }
+
+      let root = ReactDOM.createRoot(document.querySelector('#app'));
+      root.render(<App />);
+    </script>
+  </body>
+</html>

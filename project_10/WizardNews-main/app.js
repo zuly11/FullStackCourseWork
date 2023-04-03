@@ -23,8 +23,11 @@ app.get("/posts/:id", (req, res) => {
     <div class='news-list'>
     <header><img src="/logo.png"/>Wizard News</header>
       <div class="title">
+    
     ${post.title}
+    
     <small>(by ${post.name})</small>
+    
     </div>
   <div class="content">
  ${post.content}
@@ -74,7 +77,7 @@ app.get("/", (req, res) => {
   `);
 });
 
-const PORT = 1337;
+const { PORT = 1337 } = process.env;
 
 app.listen(PORT, () => {
   console.log(`App listening in port ${PORT}`);

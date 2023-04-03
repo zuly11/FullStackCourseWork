@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <title>The Real Game</title>
+    <style>
+      #board {
+        background-color: dodgerBlue;
+        padding: 2rem;
+      }
+      .big {
+        font-size: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>The Real Game <span id="theScore">0</span></h1>
+    <div id="board">
+      <button>1</button>
+      <button>2</button>
+      <button>3</button>
+      <button>4</button>
+      <button>5</button>
+      <button>6</button>
+    </div>
+    <script>
+      let score = 0;
+      let buttons = document.getElementsByTagName("button");
+      let board = document.getElementById("board");
+      let theScore = document.getElementById("theScore");
+
+      board.addEventListener("click", function (ev) {
+        if (ev.target.matches(".big")) {
+          score = score + 1;
+          theScore.innerText = score;
+        }
+      });
+
+      setInterval(function () {
+        let idx = Math.random() * buttons.length;
+        idx = Math.floor(idx);
+        buttons[idx].classList.toggle("big");
+      }, 1000);
+    </script>
+  </body>
+</html>

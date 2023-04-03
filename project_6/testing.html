@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <title>The Game</title>
+    <style>
+      .big {
+        font-size: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>The Game</h1>
+    <button id="myButton">My Button</button>
+    <script>
+      let button = document.getElementById("myButton");
+      button.innerText = "hello world";
+      button.classList.add("big");
+      button.addEventListener("click", function (ev) {
+        ev.target.classList.toggle("big");
+      });
+    </script>
+  </body>
+</html>

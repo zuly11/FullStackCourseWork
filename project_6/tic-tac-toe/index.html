@@ -1,0 +1,88 @@
+<html>
+  <head>
+    <title>TicTacToe</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="app.js"></script>
+  </head>
+
+  <body>
+    <div id="gameContainer">
+      <h1>Zuly's Tic-Tac-Toe</h1>
+      <button id="myBtn">Start Game</button>
+
+      <!-- The Modal ----------------------------------->
+      <div id="myModal" class="modal">
+        <!-- Modal content -->
+
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <form action="" name="myform" id="myForm">
+            <div>
+              <input
+                type="text"
+                id="playerName1"
+                name="firstname1"
+                placeholder="Your name.."
+              />
+
+              <select name="selectplayer1" id="firstPlayer">
+                <option value="player1">player 1</option>
+                <option value="player2">player 2</option>
+              </select>
+
+              <select id="options1" name="">
+                <option value="X">X</option>
+                <option value="O">O</option>
+              </select>
+            </div>
+            <!-----other player-->
+            <div>
+              <input
+                type="text"
+                id="playerName2"
+                name="firstname2"
+                placeholder="Your name.."
+              />
+
+              <select name="selectplayer2" id="secondPlayer">
+                <option value="player1">player 1</option>
+                <option value="player2">player 2</option>
+              </select>
+
+              <select id="options2" name="">
+                <option value="X">X</option>
+                <option value="O">O</option>
+              </select>
+            </div>
+
+            <div>
+              <input class="submit-btn" type="submit" value="Submit" />
+            </div>
+          </form>
+        </div>
+      </div>
+      <!-- End of  Modal --------------------->
+
+      <div class="game-grid">
+        <div id="cell1" class="cell" data-value="0"></div>
+        <div id="cell2" class="cell" data-value="1"></div>
+        <div id="cell3" class="cell" data-value="2"></div>
+        <div id="cell4" class="cell" data-value="3"></div>
+        <div id="cell5" class="cell" data-value="4"></div>
+        <div id="cell6" class="cell" data-value="5"></div>
+        <div id="cell7" class="cell" data-value="6"></div>
+        <div id="cell8" class="cell" data-value="7"></div>
+        <div id="cell9" class="cell" data-value="8"></div>
+      </div>
+
+      <div class="winning-message" id="winningMessage">
+        <div id="winningMessageTest"></div>
+      </div>
+
+      <div class="game-over">
+        <span class="game-over-text"></span>
+        <button id="rbtn">restart game</button>
+      </div>
+    </div>
+  </body>
+</html>

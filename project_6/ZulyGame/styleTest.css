@@ -1,0 +1,44 @@
+@font-face {
+  font-family: myXoFont;
+  src: url(files/Kayla1.ttf);
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cell {
+  width: 75px;
+  height: 75px;
+  border: 2px solid;
+  box-shadow: 0 0 0 2px;
+  line-height: 75px;
+  font-size: 50px;
+  cursor: pointer;
+}
+
+#gameContainer {
+  font-family: myXoFont;
+  text-align: center;
+  background-color: #2656beff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 75px;
+  width: 600px;
+  height: 600px;
+  border-radius: 10px;
+}
+
+#cellContainer {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  width: 225px;
+  margin: auto;
+}
+
+#restartBtn {
+  padding: 8px;
+}
